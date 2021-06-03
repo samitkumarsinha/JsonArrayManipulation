@@ -1,0 +1,71 @@
+function combine() {
+  let arr1 = [
+      { id: "abdc4051", date: "2017-01-24" },
+      { id: "abdc4052", date: "2017-01-22" },
+      { id: "abdc4053", date: "2017-01-22" }
+  ];
+
+  let arr2 = [
+      { id: "abdc4051", name: "ab" },
+      { id: "abdc4052", name: "abc" }
+  ];
+
+  let arr3 = arr1.map((item, i) => Object.assign({}, item, arr2[i]));
+
+  console.log(arr3);
+}
+function combine1(){
+   let a1 = [
+      { id: "abdc4051", date: "2017-01-24" },
+      { id: "abdc4052", date: "2017-01-22" },
+      { id: "abdc4053", date: "2017-01-22" }
+  ];
+
+  let a2 = [
+      { id: "abdc4051", name: "ab" },
+      { id: "abdc4052", name: "abc" }
+  ];
+  const a3 = a1.map(t1 => ({...t1, ...a2.find(t2 => t2.id === t1.id)}))
+  console.log(a3)
+}
+function leftjoin(){
+   let a1 = [
+      { id: "abdc4051", date: "2017-01-24" },
+      { id: "abdc4052", date: "2017-01-22" },
+      { id: "abdc4053", date: "2017-01-22" }
+  ];
+
+  let a2 = [
+      { id: "abdc4051", name: "ab" },
+      { id: "abdc4052", name: "abc" },
+      { id: "abdc4053", name: "abc" }
+  ];
+  a3 = []
+  a1.filter(item1 =>
+    a2.filter(item2 => {
+      if (item1.id === item2.id) a3.push({...item1, ...item2})
+    })
+  );
+  console.log(a3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
